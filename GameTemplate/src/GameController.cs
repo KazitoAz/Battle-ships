@@ -85,7 +85,9 @@ public static class GameController
 		    case AIOption.Easy:
 			    _ai = new AIEasyPlayer (_theGame);
 			    break;
-			default:
+		default:
+			Console.WriteLine("Please select a AI difficulty");
+			break;
 				
 		}
 
