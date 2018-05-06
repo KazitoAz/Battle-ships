@@ -180,3 +180,4 @@ C:\Users\Acer\Battle-ships\GameTemplate\bin\Debug\SwinGame.dll
 C:\Users\Acer\Battle-ships\GameTemplate\obj\x86\Debug-Windows\BattleShips.csproj.CoreCompileInputs.cache
 C:\Users\Acer\Battle-ships\GameTemplate\obj\x86\Debug-Windows\BattleShips.exe
 C:\Users\Acer\Battle-ships\GameTemplate\obj\x86\Debug-Windows\BattleShips.pdb
+C:\Users\Acer\Battle-ships\GameTemplate\obj\x86\Debug-Windows\BattleShips.csprojResolveAssemblyReference.cache
