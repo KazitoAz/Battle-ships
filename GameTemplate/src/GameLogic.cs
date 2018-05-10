@@ -9,22 +9,36 @@ using SwinGameSDK;
 using System.Runtime.ExceptionServices;
 using System.Security;
 
+using System.Media;
+using System.Runtime.InteropServices;
+
 static class GameLogic
 {
+    [DllImport("winmm.dll")]
+    public static extern bool PlaySound(String Filename, int Mod, int Flags);
+
     [HandleProcessCorruptedStateExceptions]
     [SecurityCritical]
     public static int Main()
-	{
-		//Opens a new Graphics Window
-		SwinGame.OpenGraphicsWindow("Battle Ships", 800, 600);
+    {
 
-		//Load Resources
-		GameResources.LoadResources();
 
-		SwinGame.PlayMusic(GameResources.GameMusic("Background"));
+        //Opens a new Graphics Window
+        SwinGame.OpenGraphicsWindow("Battle Ships", 800, 600);
+        PlaySound(@"C:\Users\Battle-ships\GameTemplate\Resources\sounds\horrordrone1.wav", 0, 9);
+        System.Media.SoundPlayer sp = new SoundPlayer();
+        //sp.SoundLocation = @"E:\BattleShipsCS_2018\Resources\sounds\horrordrone_000000-000500.wav";
+        //sp.PlayLooping();
 
-		//Game Loop
-		do {
+        //Load Resources
+        GameResources.LoadResources();
+
+        SwinGame.PlayMusic(GameResources.GameMusic("Background"));
+
+
+        //Game Loop
+        do
+        {
 			GameController.HandleUserInput();
 			GameController.DrawScreen();
 		} while (!(SwinGame.WindowCloseRequested() == true | GameController.CurrentState == GameState.Quitting));
