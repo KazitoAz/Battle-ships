@@ -82,9 +82,13 @@ public static class GameController
 			case AIOption.Hard:
 				_ai = new AIHardPlayer(_theGame);
 				break;
-			default:
-				_ai = new AIHardPlayer(_theGame);
-				break;
+		    case AIOption.Easy:
+			    _ai = new AIEasyPlayer (_theGame);
+			    break;
+		default:
+			Console.WriteLine("Please select a AI difficulty");
+			break;
+				
 		}
 
 		_human = new Player(_theGame);
