@@ -263,7 +263,7 @@ public static class GameResources
     /// </remarks>
 	private static void NewFont(string fontName, string filename, int size)
 	{
-		_Fonts.Add(fontName, SwinGame.LoadFont(filename, size));
+		_Fonts.Add(fontName, SwinGame.LoadFont(SwinGame.PathToResource(filename, ResourceKind.FontResource), size));
 	}
 
 	/// <remarks>
