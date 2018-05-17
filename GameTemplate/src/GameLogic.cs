@@ -22,6 +22,7 @@ static class GameLogic
     public static int Main()
     {
 
+<<<<<<< HEAD
 
         //Opens a new Graphics Window
         SwinGame.OpenGraphicsWindow("Battle Ships", 800, 600);
@@ -36,6 +37,20 @@ static class GameLogic
         SwinGame.PlayMusic(GameResources.GameMusic("Background"));
         
 
+=======
+
+        //Opens a new Graphics Window
+        SwinGame.OpenGraphicsWindow("Battle Ships", 800, 600);
+        PlaySound(@"C:\Users\Battle-ships\GameTemplate\Resources\sounds\horrordrone1.wav", 0, 9);
+        System.Media.SoundPlayer sp = new SoundPlayer();
+        //sp.SoundLocation = @"E:\BattleShipsCS_2018\Resources\sounds\horrordrone_000000-000500.wav";
+        //sp.PlayLooping();
+
+        //Load Resources
+        GameResources.LoadResources();
+
+        SwinGame.PlayMusic(GameResources.GameMusic("Background"));
+>>>>>>> backgroundmusic
 
 
         //Game Loop
