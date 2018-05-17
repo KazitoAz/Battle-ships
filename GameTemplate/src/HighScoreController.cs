@@ -153,7 +153,11 @@ static class HighScoreController
 	{
         if (SwinGame.MouseClicked(MouseButton.LeftButton) || SwinGame.KeyTyped(KeyCode.EscapeKey) || SwinGame.KeyTyped(KeyCode.ReturnKey)) {
 			GameController.EndCurrentState();
+<<<<<<< HEAD
 SaveScore();
+=======
+            SaveScore();
+>>>>>>> 58159b518f9779728e5026ee0dbce6370acb9b2e
 		}
 	}
 
