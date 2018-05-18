@@ -59,6 +59,7 @@ static class HighScoreController
     /// 
     /// Where NNN is the name and SSS is the score
     /// </remarks>
+<<<<<<< HEAD
     private static void LoadScores()
     {
         string filename = null;
@@ -216,4 +217,67 @@ static class HighScoreController
             GameController.EndCurrentState();
         }
     }
+=======
+	public static void HandleHighScoreInput()
+	{
+        if (SwinGame.MouseClicked(MouseButton.LeftButton) || SwinGame.KeyTyped(KeyCode.EscapeKey) || SwinGame.KeyTyped(KeyCode.ReturnKey)) {
+			GameController.EndCurrentState();
+<<<<<<< HEAD
+SaveScore();
+=======
+            SaveScore();
+>>>>>>> 58159b518f9779728e5026ee0dbce6370acb9b2e
+		}
+	}
+
+	/// <summary>
+	/// Read the user's name for their highsSwinGame.
+	/// </summary>
+	/// <param name="value">the player's sSwinGame.</param>
+	/// <remarks>
+	/// This verifies if the score is a highsSwinGame.
+	/// </remarks>
+	public static void ReadHighScore(int value)
+	{
+		const int ENTRY_TOP = 500;
+
+		if (_Scores.Count == 0)
+			LoadScores();
+
+		//is it a high score
+		if (value > _Scores[_Scores.Count - 1].Value) {
+			Score s = new Score();
+			s.Value = value;
+
+			GameController.AddNewState(GameState.ViewingHighScores);
+
+			int x = 0;
+			x = SCORES_LEFT + SwinGame.TextWidth(GameResources.GameFont("Courier"), "Name: ");
+
+			SwinGame.StartReadingText(Color.White, NAME_WIDTH, GameResources.GameFont("Courier"), x, ENTRY_TOP);
+
+			//Read the text from the user
+			while (SwinGame.ReadingText()) {
+				SwinGame.ProcessEvents();
+
+				UtilityFunctions.DrawBackground();
+				DrawHighScores();
+				SwinGame.DrawText("Name: ", Color.White, GameResources.GameFont("Courier"), SCORES_LEFT, ENTRY_TOP);
+				SwinGame.RefreshScreen();
+			}
+
+			s.Name = SwinGame.TextReadAsASCII();
+
+			if (s.Name.Length < 3) {
+				s.Name = s.Name + new string(Convert.ToChar(" "), 3 - s.Name.Length);
+			}
+
+			_Scores.RemoveAt(_Scores.Count - 1);
+			_Scores.Add(s);
+			_Scores.Sort();
+
+			GameController.EndCurrentState();
+		}
+	}
+>>>>>>> af75a9a6c9e6a283285598a39098219f175384c6
 }
