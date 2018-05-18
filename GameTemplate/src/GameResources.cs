@@ -16,11 +16,12 @@ public static class GameResources
 		NewFont("Courier", "cour.ttf", 14);
 		NewFont("CourierSmall", "cour.ttf", 8);
 		NewFont("Menu", "ffaccess.ttf", 8);
+
 	}
 
 	private static void LoadImages()
 	{
-		//Backgrounds
+		
 		NewImage("Menu", "main_page.jpg");
 		NewImage("Discovery", "discover.jpg");
 		NewImage("Deploy", "deploy.jpg");
@@ -118,7 +119,7 @@ public static class GameResources
 
 	private static SoundEffect _StartSound;
 	/// <summary>
-	/// The Resources Class stores all of the Games Media Resources, such as Images, Fonts
+	/// The Resources Class stores all of the Games Media Resources, such as Imaes, Fonts
 	/// Sounds, Music.
 	/// </summary>
 
@@ -237,7 +238,7 @@ public static class GameResources
         toDraw.Height = TH;
 
         SwinGame.DrawText (message, Color.White, Color.Transparent,_LoadingFont,FontAlignment.AlignCenter,toDraw);
-		//SwinGame.DrawTextLines(message, Color.White, Color.Transparent, _LoadingFont, FontAlignment.AlignCenter, TX, TY, TW, TH);
+		//  SwinGame.DrawTextLines(message, Color.White, Color.Transparent, _LoadingFont, FontAlignment.AlignCenter, TX, TY, TW, TH);
 
 		SwinGame.RefreshScreen();
 		SwinGame.ProcessEvents();
